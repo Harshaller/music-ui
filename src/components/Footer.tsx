@@ -45,7 +45,10 @@ export default function Footer() {
           <li>About Us</li>
           <li>Accessibility</li>
         </ul>
-        <p className="mt-4 md:mt-0">© 2024 CS Music</p>
+        {/* Copyright Info */}
+        <p className="mt-4 md:mt-0 text-gray-400">
+          © {new Date().getFullYear()} HarshalK. All rights reserved.
+        </p>
       </div>
     </footer>
   );

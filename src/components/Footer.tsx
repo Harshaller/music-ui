@@ -1,0 +1,52 @@
+// src/components/Footer.tsx
+export default function Footer() {
+  return (
+    <footer className="bg-[#181818] text-gray-400 text-xs md:text-sm p-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Company */}
+        <div>
+          <h4 className="text-white font-semibold mb-2">Company</h4>
+          <ul className="space-y-1">
+            <li>About</li>
+            <li>Jobs</li>
+            <li>For the Record</li>
+          </ul>
+        </div>
+
+        {/* Communities */}
+        <div>
+          <h4 className="text-white font-semibold mb-2">Communities</h4>
+          <ul className="space-y-1">
+            <li>For Artists</li>
+            <li>Developers</li>
+            <li>Advertising</li>
+            <li>Investors</li>
+            <li>Vendors</li>
+          </ul>
+        </div>
+
+        {/* Useful Links */}
+        <div>
+          <h4 className="text-white font-semibold mb-2">Useful Links</h4>
+          <ul className="space-y-1">
+            <li>Support</li>
+            <li>Free Mobile App</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Legal */}
+      <div className="mt-6 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center">
+        <ul className="flex flex-wrap gap-4 text-xs md:text-sm">
+          <li>Legal</li>
+          <li>Safety & Privacy Center</li>
+          <li>Privacy Policy</li>
+          <li>Cookies</li>
+          <li>About Us</li>
+          <li>Accessibility</li>
+        </ul>
+        <p className="mt-4 md:mt-0">© 2024 CS Music</p>
+      </div>
+    </footer>
+  );
+}

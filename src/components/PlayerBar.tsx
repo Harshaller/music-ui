@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FiPlay, FiPause } from "react-icons/fi";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import PauseIcon from "@mui/icons-material/Pause";
 import { useAudio } from "../AudioProvider";
 
 const PlayerBar: React.FC = () => {
@@ -38,8 +39,8 @@ const PlayerBar: React.FC = () => {
     <div className="flex items-center justify-between px-6 py-4 bg-gray-800 text-white">
       {/* Song Info */}
       <div>
-        <h3 className="text-lg font-semibold">{currentTrack.title}</h3>
-        <p className="text-sm text-gray-400">{currentTrack.artist}</p>
+        <h3 className="text-lg font-semibold">{currentTrack?.title}</h3>
+        <p className="text-sm text-gray-400">{currentTrack?.artist}</p>
       </div>
 
       {/* Controls + Progress */}
@@ -48,7 +49,7 @@ const PlayerBar: React.FC = () => {
           onClick={togglePlay}
           className="p-2 rounded-full bg-[#AAB3CA]/8 hover:bg-[#AAB3CA]/20 transition"
         >
-          {isPlaying ? <FiPause size={20} /> : <FiPlay size={20} />}
+          {isPlaying ? <PauseIcon fontSize="small" /> : <PlayArrowIcon fontSize="small" />}
         </button>
 
         <div className="flex-1">

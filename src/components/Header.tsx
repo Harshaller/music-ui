@@ -9,7 +9,7 @@ const Header: React.FC = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold tracking-tight">
-          Music UI
+          Pulse Play
         </div>
 
         {/* Right side: Icons + Buttons (desktop only) */}

@@ -90,16 +90,16 @@ export default function SongDetails() {
 
   return (
     <section className="bg-[#121212] md:bg-transparent rounded-lg p-4 md:p-0">
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
         {/* Album art */}
         <img
           src={currentTrack.cover}
           alt={currentTrack.title}
-          className="w-32 h-32 md:w-56 md:h-56 rounded-md object-cover mx-auto md:mx-0"
+          className="w-full h-auto md:w-56 md:h-56 rounded-md object-cover mx-auto md:mx-0"
         />
 
         {/* Text block */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
           <p className="uppercase tracking-wide text-xs text-gray-400 mb-1">Song</p>
           <h2 className="text-2xl md:text-5xl font-extrabold leading-tight">{currentTrack.title}</h2>
           <p className="mt-2 text-sm md:text-base text-gray-400">

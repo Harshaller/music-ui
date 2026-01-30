@@ -13,23 +13,25 @@ const releases = [
 export default function PopularAlbums() {
   return (
     <section>
-      <h3 className="text-xl font-semibold mb-4">Popular Albums</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <h3 className="text-lg md:text-xl font-semibold mb-4 text-center md:text-left">
+        Popular Albums
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {releases.map((release, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-3 bg-[#181818] p-3 rounded-md hover:bg-[#202020] transition"
+            className="flex flex-col md:flex-row md:items-center gap-3 bg-[#181818] p-3 rounded-md hover:bg-[#202020] transition"
           >
-            {/* Small album image on left */}
+            {/* Album image */}
             <img
               src={release.image}
               alt={release.title}
-              className="w-16 h-16 object-cover rounded-md"
+              className="w-20 h-20 md:w-16 md:h-16 object-cover rounded-md mx-auto md:mx-0"
             />
-            {/* Text on right */}
-            <div>
-              <p className="font-bold text-sm">{release.title}</p>
-              <p className="text-xs text-gray-400">
+            {/* Text */}
+            <div className="text-center md:text-left">
+              <p className="font-bold text-sm md:text-base">{release.title}</p>
+              <p className="text-xs md:text-sm text-gray-400">
                 {release.year} • {release.type}
               </p>
             </div>

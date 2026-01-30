@@ -13,20 +13,24 @@ const fans = [
 
 const FansAlsoLike: React.FC = () => {
   return (
-    <section className="mt-10">
-      <h2 className="text-xl font-semibold mb-4">Fans Also Like</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="mt-8 md:mt-10">
+      <h2 className="text-lg md:text-xl font-semibold mb-4 text-center md:text-left">
+        Fans Also Like
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {fans.map((fan) => (
           <div
             key={fan.id}
-            className="flex flex-col items-center bg-[#1f1f1f] p-4 rounded-lg hover:bg-[#2a2a2a] transition"
+            className="flex flex-col items-center bg-[#1f1f1f] p-3 md:p-4 rounded-lg hover:bg-[#2a2a2a] transition"
           >
             <img
               src={fan.image}
               alt={fan.name}
-              className="w-32 h-32 rounded-full object-cover mb-3"
+              className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover mb-2 md:mb-3"
             />
-            <p className="text-sm font-medium">{fan.name}</p>
+            <p className="text-xs md:text-sm font-medium text-center md:text-left">
+              {fan.name}
+            </p>
           </div>
         ))}
       </div>

@@ -7,7 +7,7 @@ import PopularReleases from "./components/PopularReleases";
 import PopularAlbums from "./components/PopularAlbums";
 import FansAlsoLike from "./components/FansAlsoLike";
 import Footer from "./components/Footer";
-import PlayerBar from "./components/PlayerBar"; // ✅ matches PlayerBar.tsx
+import PlayerBar from "./components/PlayerBar"; 
 import { AudioProvider } from "./AudioProvider";
 
 export default function App() {
@@ -18,12 +18,14 @@ export default function App() {
         <Header />
 
         {/* Main layout */}
-        <div className="flex flex-1">
+        <div className="flex flex-col md:flex-row flex-1">
           {/* Sidebar (responsive) */}
-          <Sidebar />
+          <div className="w-full md:w-64">
+            <Sidebar />
+          </div>
 
           {/* Main content area */}
-          <main className="flex-1 p-6 space-y-10 overflow-y-auto">
+          <main className="flex-1 p-4 md:p-6 space-y-6 md:space-y-10 overflow-y-auto">
             <SongDetails />
             <RecommendedList />
             <PopularTracks />

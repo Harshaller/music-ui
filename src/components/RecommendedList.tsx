@@ -12,25 +12,26 @@ const recommended = [
   { id: 4, title: "Jazz Essentials", artist: "Miles Davis", image: cover4 },
 ];
 
-
 const RecommendedList: React.FC = () => {
   return (
-    <section className="mt-10">
-      <h2 className="text-xl font-semibold mb-6">Recommended Soundtracks</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="mt-8 md:mt-10">
+      <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-center md:text-left">
+        Recommended Soundtracks
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {recommended.map((track) => (
           <div
             key={track.id}
-            className="bg-[#1f1f1f] rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform"
+            className="bg-[#1f1f1f] rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-200"
           >
             <img
               src={track.image}
               alt={track.title}
-              className="w-full h-40 object-cover"
+              className="w-full h-48 md:h-40 object-cover"
             />
-            <div className="p-4">
-              <h3 className="text-md font-semibold">{track.title}</h3>
-              <p className="text-sm text-gray-400">{track.artist}</p>
+            <div className="p-3 md:p-4 text-center md:text-left">
+              <h3 className="text-sm md:text-md font-semibold">{track.title}</h3>
+              <p className="text-xs md:text-sm text-gray-400">{track.artist}</p>
             </div>
           </div>
         ))}

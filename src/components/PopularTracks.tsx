@@ -14,25 +14,27 @@ const tracks = [
 export default function PopularTracks() {
   return (
     <section>
-      <h3 className="text-xl font-semibold mb-4">Popular Tracks</h3>
+      <h3 className="text-lg md:text-xl font-semibold mb-4 text-center md:text-left">
+        Popular Tracks
+      </h3>
       <ul className="space-y-2">
         {tracks.map((track, idx) => (
           <li
             key={idx}
-            className="flex items-center justify-between bg-[#181818] p-3 rounded-md"
+            className="flex flex-col md:flex-row md:items-center md:justify-between bg-[#181818] p-3 rounded-md"
           >
             {/* Left side: image + title */}
             <div className="flex items-center gap-3">
               <img
                 src={track.image}
                 alt={track.title}
-                className="w-10 h-10 rounded-md object-cover"
+                className="w-12 h-12 md:w-10 md:h-10 rounded-md object-cover"
               />
-              <span>{track.title}</span>
+              <span className="text-sm md:text-base font-medium">{track.title}</span>
             </div>
 
             {/* Right side: plays + duration */}
-            <span className="text-gray-400">
+            <span className="text-xs md:text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
               {track.plays} • {track.duration}
             </span>
           </li>

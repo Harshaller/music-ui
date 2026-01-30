@@ -21,17 +21,16 @@ export default function Sidebar() {
   );
 
   return (
-    <aside className="w-64 bg-[#121212] text-white p-6 space-y-6">
+    <aside className="w-full md:w-64 bg-[#121212] text-white p-4 md:p-6 space-y-4 md:space-y-6">
       {/* Header */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 justify-center md:justify-start">
         <LibraryMusicIcon fontSize="small" />
-        <h2 className="text-lg font-semibold">Your Library</h2>
+        <h2 className="text-base md:text-lg font-semibold">Your Library</h2>
       </div>
-     
 
       {/* Playlist Chip */}
-      <div>
-        <span className="inline-block px-3 py-1 text-sm rounded-full bg-[#1a1a1a] text-gray-300">
+      <div className="text-center md:text-left">
+        <span className="inline-block px-3 py-1 text-xs md:text-sm rounded-full bg-[#1a1a1a] text-gray-300">
           Playlist
         </span>
       </div>
@@ -43,7 +42,7 @@ export default function Sidebar() {
           placeholder="Search playlist..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full px-3 py-2 rounded-md bg-[#1a1a1a] text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 rounded-md bg-[#1a1a1a] text-xs md:text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
@@ -57,13 +56,15 @@ export default function Sidebar() {
             >
               <MusicNoteIcon fontSize="small" className="text-gray-400" />
               <div className="flex flex-col">
-                <span className="text-sm font-medium">{track.title}</span>
-                <span className="text-xs text-gray-400">{track.artist}</span>
+                <span className="text-xs md:text-sm font-medium">{track.title}</span>
+                <span className="text-[10px] md:text-xs text-gray-400">{track.artist}</span>
               </div>
             </li>
           ))
         ) : (
-          <li className="text-sm text-gray-500">No tracks found</li>
+          <li className="text-xs md:text-sm text-gray-500 text-center md:text-left">
+            No tracks found
+          </li>
         )}
       </ul>
     </aside>

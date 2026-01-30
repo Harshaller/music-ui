@@ -13,20 +13,27 @@ const releases = [
 export default function PopularReleases() {
   return (
     <section>
-      <h3 className="text-xl font-semibold mb-4">Popular Releases</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <h3 className="text-lg md:text-xl font-semibold mb-4 text-center md:text-left">
+        Popular Releases
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {releases.map((release, idx) => (
-          <div key={idx} className="bg-[#181818] p-4 rounded-md">
+          <div
+            key={idx}
+            className="bg-[#181818] p-4 rounded-md hover:bg-[#202020] transition"
+          >
             {/* Image */}
             <img
               src={release.image}
               alt={release.title}
-              className="w-full h-32 object-cover rounded-md mb-3"
+              className="w-full h-40 md:h-32 object-cover rounded-md mb-3"
             />
             {/* Title */}
-            <p className="font-bold">{release.title}</p>
+            <p className="font-bold text-sm md:text-base text-center md:text-left">
+              {release.title}
+            </p>
             {/* Meta */}
-            <p className="text-gray-400">
+            <p className="text-xs md:text-sm text-gray-400 text-center md:text-left">
               {release.year} • {release.type}
             </p>
           </div>

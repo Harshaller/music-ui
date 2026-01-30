@@ -36,15 +36,15 @@ const PlayerBar: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-between px-6 py-4 bg-gray-800 text-white">
+    <div className="flex flex-col md:flex-row items-center justify-between px-4 py-3 md:px-6 md:py-4 bg-gray-800 text-white gap-3 md:gap-0">
       {/* Song Info */}
-      <div>
-        <h3 className="text-lg font-semibold">{currentTrack?.title}</h3>
-        <p className="text-sm text-gray-400">{currentTrack?.artist}</p>
+      <div className="text-center md:text-left">
+        <h3 className="text-base md:text-lg font-semibold">{currentTrack?.title}</h3>
+        <p className="text-xs md:text-sm text-gray-400">{currentTrack?.artist}</p>
       </div>
 
       {/* Controls + Progress */}
-      <div className="flex items-center gap-4 w-1/2">
+      <div className="flex items-center gap-3 md:gap-4 w-full md:w-1/2">
         <button
           onClick={togglePlay}
           className="p-2 rounded-full bg-[#AAB3CA]/8 hover:bg-[#AAB3CA]/20 transition"
@@ -59,7 +59,7 @@ const PlayerBar: React.FC = () => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <div className="flex justify-between text-xs text-gray-400 mt-1">
+          <div className="flex justify-between text-[10px] md:text-xs text-gray-400 mt-1">
             <span>{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
